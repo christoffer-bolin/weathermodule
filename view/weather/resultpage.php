@@ -19,8 +19,8 @@
     <script>
 
     <?php
-    $config = $di->get("configuration")->load("apikey.php");
-    $access_key = $config["config"]["keyHolder"]["mapboxKey"];
+    $config = $di->get("configuration")->load("weatherapi.php");
+    $access_key = $config["config"]["weatherKeyHolder"]["mapboxKey"];
     ?>
 
     mapboxgl.accessToken = '<?= $access_key ?>';

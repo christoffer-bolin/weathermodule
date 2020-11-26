@@ -3,5 +3,5 @@
 /vendor
 memory::
 composer.lock
-/config/apikey.php
+/config/weatherapi.php
 /a
