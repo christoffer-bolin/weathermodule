@@ -3,6 +3,7 @@
 namespace Anax\Controller;
 
 use Anax\DI\DIFactoryConfig;
+use Anax\Configure\Configuration;
 use PHPUnit\Framework\TestCase;
 use Anax\Weather\WeatherController;
 
@@ -25,15 +26,22 @@ class WeatherControllerTest extends TestCase
         global $di;
 
         // di setup
-        $this->di = new DIFactoryConfig();
-        $this->di->loadServices(ANAX_INSTALL_PATH . "/config/di");
+        $di = new DIFactoryConfig();
+        $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
+        $di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
+
+        //$this->di = $di;
+
+        // $cfg = new Configuration();
+        // $cfg->setBaseDirectories([ANAX_INSTALL_PATH . "/config"]);
+        // $this->di->set("configuration", $cfg);
 
         // Use a different cache dir for unit test
-        $this->di->get("cache")->setPath(ANAX_INSTALL_PATH . "/test/cache");
+        //$this->di->get("cache")->setPath(ANAX_INSTALL_PATH . "/test/cache");
 
         // Setup the controller
         $this->controller = new WeatherController();
-        $this->controller->setDI($this->di);
+        $this->controller->setDI($di);
         //$this->controller->initialize();
     }
 
