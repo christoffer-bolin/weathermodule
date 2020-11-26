@@ -23,11 +23,17 @@ Create the file `weatherapi.php` in the config/ folder,
 paste in the following and change xxx to your apikeys.
 
 `<?php
+
 return [
+
     "weatherKeyHolder" => [
+
         "weatherKey" => "xxx",
+
         "mapboxKey" => "xxx"
+
     ]
+    
 ];`
 
 ### Structure
