@@ -9,8 +9,11 @@ STILL UNDER CONSTRUCTION...
 ### Copy configuration
 
 rsync -av vendor/chbl/weather/config/ config/
+
 rsync -av vendor/chbl/weather/src/ src/
+
 rsync -av vendor/chbl/weather/test/ test/
+
 rsync -av vendor/chbl/weather/view/ view/
 
 ### Add your personal API keys
