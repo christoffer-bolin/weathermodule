@@ -1,10 +1,18 @@
 ## Weather module for Anax (used in the ramverk1 repo)
 
-STILL UNDER CONSTRUCTION...
+A module to use in the course ramverk1, using PHP framework Anax.
 
 ### Installation
 
 `composer require chbl/weather`
+
+`make install
+
+make install test`
+
+To run the tests use `make test`, but please remember to add you APIkeys first.
+
+Instructions further down!
 
 ### Copy configuration
 
@@ -33,13 +41,14 @@ return [
         "mapboxKey" => "xxx"
 
     ]
-    
+
 ];`
 
 ### Structure
 
 The weather service will be available at `/weather`
 and the ip service will be available at `/validate`
+
 
 
 <!-- Version to use: 1.0.2 -->
