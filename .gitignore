@@ -4,4 +4,5 @@
 memory::
 composer.lock
 /config/weatherapi.php
+/config/apikey.php
 /a

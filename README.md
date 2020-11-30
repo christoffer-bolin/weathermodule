@@ -26,9 +26,9 @@ rsync -av vendor/chbl/weather/view/ view/
 
 ### Add your personal API keys
 
-Create the file `weatherapi.php` in the config/ folder,
+Create the files `weatherapi.php` and `apikey.php` in the config/ folder,
 
-paste in the following and change xxx to your apikeys.
+paste in the following in weatherapi.php and change xxx to your apikeys.
 
 `<?php
 
@@ -43,6 +43,18 @@ return [
     ]
 
 ];`
+
+For your GetGeolocation API, do the same but use the following code, and paste into `apikey.php`,
+
+`<?php
+
+return [
+    "keyHolder" => [
+        "apiKey" => "x"
+    ]
+];
+`
+
 
 ### Structure
 

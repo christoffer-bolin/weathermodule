@@ -9,7 +9,7 @@ class GetGeo
         global $di;
 
         $config = $di->get("configuration")->load("weatherapi.php");
-        $access_key = $config["config"]["weatherKeyHolder"]["weatherKey"];
+        $access_key = $config["config"]["keyHolder"]["apiKey"];
 
         // Initialize CURL:
         $ch = curl_init('http://api.ipstack.com/'.$ip.'?access_key='.$access_key.'');
