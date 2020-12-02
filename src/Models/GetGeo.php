@@ -8,7 +8,7 @@ class GetGeo
     {
         global $di;
 
-        $config = $di->get("configuration")->load("weatherapi.php");
+        $config = $di->get("configuration")->load("apikey.php");
         $access_key = $config["config"]["keyHolder"]["apiKey"];
 
         // Initialize CURL:
