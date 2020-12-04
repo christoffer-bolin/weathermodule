@@ -56,11 +56,11 @@ class WeatherTest extends TestCase
     }
 
 
-    public function testCheckWeatherCordinates()
-    {
-        $weather = new WeatherForecast();
-        $res = $weather->checkWeather($lan = "56.16280", $lon = "15.58697");
-
-        $this->assertIsArray($res);
-    }
+    // public function testCheckWeatherCordinates()
+    // {
+    //     $weather = new WeatherForecast();
+    //     $res = $weather->checkWeather($lan = "56.16280", $lon = "15.58697");
+    //
+    //     $this->assertIsArray($res);
+    // }
 }
