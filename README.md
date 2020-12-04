@@ -1,3 +1,9 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/christoffer-bolin/weathermodule/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/christoffer-bolin/weathermodule/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/christoffer-bolin/weathermodule/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/christoffer-bolin/weathermodule/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/christoffer-bolin/weathermodule/badges/build.png?b=master)](https://scrutinizer-ci.com/g/christoffer-bolin/weathermodule/build-status/master)
+[![Build Status](https://travis-ci.com/christoffer-bolin/weathermodule.svg?branch=master)](https://travis-ci.com/christoffer-bolin/weathermodule)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/christoffer-bolin/weathermodule)
+
 ## Weather module for Anax (used in the ramverk1 repo)
 
 A module to use in the course ramverk1, using PHP framework Anax.
