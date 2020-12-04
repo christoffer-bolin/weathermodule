@@ -22,6 +22,16 @@ class WeatherController implements ContainerInjectableInterface
         ]);
     }
 
+
+    // public function getGeoCords($location)
+    // {
+    //     $geo = new GetGeo();
+    //
+    //     $res = $geo->getGeo($location);
+    //
+    //     return $res;
+    // }
+
     public function checkWeatherAction()
     {
         $page = $this->di->get("page");
@@ -32,14 +42,13 @@ class WeatherController implements ContainerInjectableInterface
         $type = $this->di->get("request")->getGet("type");
 
         $weather = $this->di->get("weather");
-        $geo = new GetGeo();
-
 
         if ($type == 'prognos') {
             if (strpos($location, ",") == true) {
                 $exploded = explode(",", $location);
                 $answer = $weather->checkWeather($exploded[0], $exploded[1]);
             } else {
+                $geo = new GetGeo();
                 $res = $geo->getGeo($location);
                 if ($res["longitude"] !== null) {
                     $answer = $weather->checkWeather($res["latitude"], $res["longitude"]);
@@ -52,6 +61,7 @@ class WeatherController implements ContainerInjectableInterface
                 $exploded = explode(",", $location);
                 $answer = $weather->checkHistory($exploded[0], $exploded[1]);
             } else {
+                $geo = new GetGeo();
                 $res = $geo->getGeo($location);
                 if ($res["longitude"] !== null) {
                     $answer = $weather->checkHistory($res["latitude"], $res["longitude"]);
