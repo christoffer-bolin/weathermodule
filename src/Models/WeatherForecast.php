@@ -9,8 +9,8 @@ class WeatherForecast
     {
         global $di;
         $this->oneWeek = [];
-        $this->config = $di->get("configuration")->load("weatherapi.php");
-        $this->access_key = $this->config["config"]["weatherKeyHolder"]["weatherKey"];
+        // $this->config = $di->get("configuration")->load("weatherapi.php");
+        // $this->access_key = $this->config["config"]["weatherKeyHolder"]["weatherKey"];
         $this->weather = [];
     }
 
