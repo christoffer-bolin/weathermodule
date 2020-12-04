@@ -86,9 +86,10 @@ class WeatherForecast
 
             $mcurl = curl_multi_init();
 
+            $access_key = $this->fetchApiKey();
             $fiveDays = [];
             foreach ($pastFiveDays as $day) {
-                $ch3 = curl_init($fetch.$day.'&APPID='.$this->access_key.'');
+                $ch3 = curl_init($fetch.$day.'&APPID='.$access_key.'');
                 curl_setopt($ch3, CURLOPT_RETURNTRANSFER, 1);
                 curl_multi_add_handle($mcurl, $ch3);
                 $fiveDays[] = $ch3;
