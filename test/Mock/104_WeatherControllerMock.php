@@ -15,10 +15,10 @@ class WeatherControllerMock extends WeatherController
     * Class for mocking the results from weather
     *
     */
-    public function checkWeatherActions()
+    public function checkWeatherAction()
     {
 
-        $lat = $_GET["lan"];
+        $lat = $_GET["lat"];
         $lon = $_GET["lon"];
 
         if ($_GET["type"] == "prognos") {

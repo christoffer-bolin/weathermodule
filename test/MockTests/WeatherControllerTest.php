@@ -44,78 +44,78 @@ class WeatherControllerTest extends TestCase
 
     public function testcheckWeatherActionCoordinates()
     {
-        // $_GET["lan"] = "56.16280";
-        // $_GET["lon"] = "15.58697";
-        $_GET["location"] = "56.16280,15.58697";
+        $_GET["lat"] = "56.16280";
+        $_GET["lon"] = "15.58697";
+        //$_GET["location"] = "56.16280,15.58697";
         $_GET["type"] = "prognos";
 
         $res = $this->controller->checkWeatherAction();
-        $this->assertIsObject($res);
+        $this->assertIsArray($res);
     }
 
     public function testcheckWeatherActionCoordinatesWrong()
     {
-        // $_GET["lan"] = "56.16280";
-        // $_GET["lon"] = "15.58697";
-        $_GET["location"] = "56.16280,100.58697";
+        $_GET["lat"] = "56.16280";
+        $_GET["lon"] = "100.58697";
+        //$_GET["location"] = "56.16280,100.58697";
         $_GET["type"] = "prognos";
 
         $res = $this->controller->checkWeatherAction();
-        $this->assertIsObject($res);
+        $this->assertIsArray($res);
     }
 
     public function testcheckWeatherActionCoordinatesHistory()
     {
-        // $_GET["lan"] = "56.16280";
-        // $_GET["lon"] = "15.58697";
-        $_GET["location"] = "56.16280,15.58697";
+        $_GET["lat"] = "56.16280";
+        $_GET["lon"] = "15.58697";
+        //$_GET["location"] = "56.16280,15.58697";
         $_GET["type"] = "history";
 
         $res = $this->controller->checkWeatherAction();
-        $this->assertIsObject($res);
+        $this->assertIsArray($res);
     }
 
     public function testcheckWeatherActionCoordinatesWrongHistory()
     {
-        // $_GET["lan"] = "56.16280";
-        // $_GET["lon"] = "15.58697";
-        $_GET["location"] = "91.16280,100.58697";
+        $_GET["lat"] = "91.16280";
+        $_GET["lon"] = "100.58697";
+        //$_GET["location"] = "91.16280,100.58697";
         $_GET["type"] = "history";
 
         $res = $this->controller->checkWeatherAction();
-        $this->assertIsObject($res);
+        $this->assertIsArray($res);
     }
 
     public function testcheckWeatherActionCoordinatesWrongInput()
     {
-        // $_GET["lan"] = "56.16280";
-        // $_GET["lon"] = "15.58697";
-        $_GET["location"] = "test,test";
+        $_GET["lat"] = "test";
+        $_GET["lon"] = "test";
+        //$_GET["location"] = "test,test";
         $_GET["type"] = "history";
 
         $res = $this->controller->checkWeatherAction();
-        $this->assertIsObject($res);
+        $this->assertIsArray($res);
     }
 
-    public function testcheckWeatherActionHistoryWrongIp()
-    {
-        // $_GET["lan"] = "56.16280";
-        // $_GET["lon"] = "15.58697";
-        $_GET["location"] = "8665.24.145.234";
-        $_GET["type"] = "history";
-
-        $res = $this->controller->checkWeatherAction();
-        $this->assertIsObject($res);
-    }
-
-    public function testcheckWeatherActionPrognosWrongIp()
-    {
-        // $_GET["lan"] = "56.16280";
-        // $_GET["lon"] = "15.58697";
-        $_GET["location"] = "8665.24.145.234";
-        $_GET["type"] = "prognos";
-
-        $res = $this->controller->checkWeatherAction();
-        $this->assertIsObject($res);
-    }
+    // public function testcheckWeatherActionHistoryWrongIp()
+    // {
+    //     $_GET["lat"] = "56.16280";
+    //     $_GET["lon"] = "15.58697";
+    //     //$_GET["location"] = "8665.24.145.234";
+    //     $_GET["type"] = "history";
+    //
+    //     $res = $this->controller->checkWeatherAction();
+    //     $this->assertIsObject($res);
+    // }
+    //
+    // public function testcheckWeatherActionPrognosWrongIp()
+    // {
+    //     $_GET["lat"] = "56.16280";
+    //     $_GET["lon"] = "15.58697";
+    //     //$_GET["location"] = "8665.24.145.234";
+    //     $_GET["type"] = "prognos";
+    //
+    //     $res = $this->controller->checkWeatherAction();
+    //     $this->assertIsObject($res);
+    // }
 }
