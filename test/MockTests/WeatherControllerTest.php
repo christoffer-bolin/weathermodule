@@ -83,7 +83,7 @@ class WeatherControllerTest extends TestCase
         $_GET["type"] = "history";
 
         $res = $this->controller->checkWeatherAction();
-        $this->assertIsArray($res);
+        $this->assertIsString($res);
     }
 
     public function testcheckWeatherActionCoordinatesWrongInput()
@@ -94,7 +94,7 @@ class WeatherControllerTest extends TestCase
         $_GET["type"] = "history";
 
         $res = $this->controller->checkWeatherAction();
-        $this->assertIsArray($res);
+        $this->assertIsString($res);
     }
 
     // public function testcheckWeatherActionHistoryWrongIp()

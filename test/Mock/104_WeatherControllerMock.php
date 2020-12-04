@@ -17,18 +17,25 @@ class WeatherControllerMock extends WeatherController
     */
     public function checkWeatherAction()
     {
+        $weather = new WeatherMock();
 
         $lat = $_GET["lat"];
         $lon = $_GET["lon"];
 
         if ($_GET["type"] == "prognos") {
-            $weather = new WeatherMock();
-            $forweather = $weather->checkWeather($lat, $lon);
-            return $forweather;
+            if ($weather->validateNumbersCords($lat, $lon) && $weather->validateCords($lat, $lon)) {
+                $forweather = $weather->checkWeather($lat, $lon);
+                return $forweather;
+            } else {
+                return $error = "felaktig input";
+            }
         } else {
-            $weather = new WeatherMock();
-            $histweather = $weather->checkHistory($lat, $lon);
-            return $histweather;
+            if ($weather->validateNumbersCords($lat, $lon) && $weather->validateCords($lat, $lon)) {
+                $histweather = $weather->checkHistory($lat, $lon);
+                return $histweather;
+            } else {
+                return $error = "felaktig input";
+            }
         }
     }
 
