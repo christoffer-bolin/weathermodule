@@ -9,9 +9,16 @@ class WeatherForecast
     {
         global $di;
         $this->oneWeek = [];
-        // $this->config = $di->get("configuration")->load("weatherapi.php");
-        // $this->access_key = $this->config["config"]["weatherKeyHolder"]["weatherKey"];
         $this->weather = [];
+    }
+
+
+    public function fetchApiKey()
+    {
+        $config = $di->get("configuration")->load("weatherapi.php");
+        $access_key = $this->config["config"]["weatherKeyHolder"]["weatherKey"];
+
+        return $access_key;
     }
 
 
@@ -19,6 +26,8 @@ class WeatherForecast
     {
         if ($this->validateNumbersCords($lat, $lon) && $this->validateCords($lat, $lon)) {
             $exclude = "current,minutely,hourly,alerts";
+
+            $access_key = $this->fetchApiKey();
 
             $ch = curl_init('https://api.openweathermap.org/data/2.5/onecall?lat='.$lat.'&lon='.$lon.'&exclude='.$exclude.'&units=metric&lang=sv&appid='.$this->access_key.'');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
