@@ -7,7 +7,6 @@ class WeatherForecast
 
     public function __construct()
     {
-        global $di;
         $this->oneWeek = [];
         $this->weather = [];
     }
@@ -15,9 +14,8 @@ class WeatherForecast
 
     public function fetchApiKey()
     {
-        $config = $di->get("configuration")->load("weatherapi.php");
-        $access_key = $this->config["config"]["weatherKeyHolder"]["weatherKey"];
-
+        $access_key = require ANAX_INSTALL_PATH . "/config/weatherapi.php";
+        $access_key = $access_key["weatherKeyHolder"]["weatherKey"];
         return $access_key;
     }
 
@@ -29,7 +27,7 @@ class WeatherForecast
 
             $access_key = $this->fetchApiKey();
 
-            $ch = curl_init('https://api.openweathermap.org/data/2.5/onecall?lat='.$lat.'&lon='.$lon.'&exclude='.$exclude.'&units=metric&lang=sv&appid='.$this->access_key.'');
+            $ch = curl_init('https://api.openweathermap.org/data/2.5/onecall?lat='.$lat.'&lon='.$lon.'&exclude='.$exclude.'&units=metric&lang=sv&appid='.$access_key.'');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
             // Store the data:
